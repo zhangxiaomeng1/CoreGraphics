@@ -202,11 +202,13 @@ dispatch_semaphore_t semaphoreLock;
     ticketSurplusCount =50;// queue1 代表北京火车票售卖窗口
     dispatch_queue_t queue1 = dispatch_queue_create("net.bujige.testQueue1", DISPATCH_QUEUE_SERIAL);// queue2 代表上海火车票售卖窗口
     dispatch_queue_t queue2 = dispatch_queue_create("net.bujige.testQueue2", DISPATCH_QUEUE_SERIAL);
-        __weak typeof(self) weakSelf =self;
+    __weak typeof(self) weakSelf =self;
     dispatch_async(queue1, ^{
-          [weakSelf saleTicketSafe];    });
-    dispatch_async(queue2, ^{        [weakSelf saleTicketSafe];    });
-    
+        [weakSelf saleTicketSafe];
+    });
+    dispatch_async(queue2, ^{
+        [weakSelf saleTicketSafe];
+    });
 }
 
 + (void)saleTicketSafe {
@@ -215,18 +217,16 @@ dispatch_semaphore_t semaphoreLock;
         if(ticketSurplusCount >0) {//如果还有票，继续售卖
             ticketSurplusCount--;
             NSLog(@"%@", [NSString stringWithFormat:@"剩余票数：%d 窗口：%@",ticketSurplusCount, [NSThread currentThread]]);
-              [NSThread sleepForTimeInterval:0.2];
-            
+            [NSThread sleepForTimeInterval:0.2];
         }else{//如果已卖完，关闭售票窗口
-            NSLog(@"所有火车票均已售完");// 相当于解锁
+            NSLog(@"所有火车票均已售完");
+            // 相当于解锁
             dispatch_semaphore_signal(semaphoreLock);
             break;
-            
-              }// 相当于解锁
+            }
+        // 相当于解锁
         dispatch_semaphore_signal(semaphoreLock);
-        
     }
-        
 }
 
 

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CoreGraphicsDemo_Example' do
+  pod 'CoreGraphicsDemo', :path => '../'
+
+  target 'CoreGraphicsDemo_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

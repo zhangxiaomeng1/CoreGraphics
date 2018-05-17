@@ -115,54 +115,7 @@ dispatch_semaphore_t semaphoreLock;
 }
 + (void)semaphoreSync
 {
-    NSLog(@"currentThread---%@",[NSThread currentThread]);// 打印当前线程NSLog(@"semaphore---begin");
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    __block int number =0;
-    dispatch_async(queue, ^{// 追加任务1
-        [NSThread sleepForTimeInterval:2];
-        // 模拟耗时操作
-        NSLog(@"1---%@",[NSThread currentThread]);
-        // 打印当前线程number =100;
-          dispatch_semaphore_signal(semaphore);
-        
-        dispatch_async(queue, ^{// 追加任务1
-            [NSThread sleepForTimeInterval:2];
-            // 模拟耗时操作
-            NSLog(@"2---%@",[NSThread currentThread]);
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-            });
-            // 打印当前线程number =100;
-              dispatch_semaphore_signal(semaphore);
-            
-              });
-        
-        dispatch_async(queue, ^{// 追加任务1
-            [NSThread sleepForTimeInterval:2];
-            // 模拟耗时操作
-            NSLog(@"3---%@",[NSThread currentThread]);
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-            });
-            // 打印当前线程number =100;
-              dispatch_semaphore_signal(semaphore);
-            
-              });
-
-          dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-          dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-
-        
-          });
-    
-    
-    NSLog(@"semaphore---end,number = %zd",number);
-    
-    [self initTicketStatusSave] ;
-    
+    [self initTicketStatusSave] ;    
 }
 + (void)initTicketStatusNotSave {
     NSLog(@"currentThread---%@",[NSThread currentThread]);// 打印当前线程NSLog(@"semaphore---begin");
@@ -200,8 +153,8 @@ dispatch_semaphore_t semaphoreLock;
     NSLog(@"semaphore---begin");
     semaphoreLock = dispatch_semaphore_create(1);
     ticketSurplusCount =50;// queue1 代表北京火车票售卖窗口
-    dispatch_queue_t queue1 = dispatch_queue_create("net.bujige.testQueue1", DISPATCH_QUEUE_SERIAL);// queue2 代表上海火车票售卖窗口
-    dispatch_queue_t queue2 = dispatch_queue_create("net.bujige.testQueue2", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue1 = dispatch_queue_create("net.bujige.testQueue1", DISPATCH_QUEUE_CONCURRENT);// queue2 代表上海火车票售卖窗口
+    dispatch_queue_t queue2 = dispatch_queue_create("net.bujige.testQueue2", DISPATCH_QUEUE_CONCURRENT);
     __weak typeof(self) weakSelf =self;
     dispatch_async(queue1, ^{
         [weakSelf saleTicketSafe];
@@ -209,6 +162,7 @@ dispatch_semaphore_t semaphoreLock;
     dispatch_async(queue2, ^{
         [weakSelf saleTicketSafe];
     });
+    NSLog(@"initTicketStatusSave---end");
 }
 
 + (void)saleTicketSafe {

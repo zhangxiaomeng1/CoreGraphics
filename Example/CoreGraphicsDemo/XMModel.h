@@ -16,4 +16,6 @@
 
 @property (nonatomic, copy) NSString *pic_url;
 
++ (void)semaphoreSync;
+
 @end

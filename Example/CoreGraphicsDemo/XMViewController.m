@@ -13,6 +13,10 @@
 #import <objc/message.h>
 #import "NSObject+name.h"
 #import "XMModel.h"
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 @interface XMViewController ()<UIGestureRecognizerDelegate,CAAnimationDelegate>
 
@@ -64,6 +68,47 @@
     //        view2.backgroundColor = [UIColor redColor];
     //        [vc addSubview:view2];
     //    }
+    
+//    iOS 中间镂空效果的View
+    UIView *maskView = [[UIView alloc] initWithFrame:self.view.bounds];
+    maskView.backgroundColor = [UIColor grayColor];
+    maskView.alpha = 0.8;
+    [self.view addSubview:maskView];
+//
+//    //贝塞尔曲线 画一个带有圆角的矩形
+//    UIBezierPath *bpath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(10, 10, self.view.frame.size.width - 20, self.view.frame.size.height - 20) cornerRadius:15];
+//    //贝塞尔曲线 画一个圆形
+//    [bpath appendPath:[UIBezierPath bezierPathWithArcCenter:maskView.center radius:100 startAngle:0 endAngle:2*M_PI clockwise:NO]];
+//    //创建一个CAShapeLayer 图层
+//    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+//    shapeLayer.path = bpath.CGPath;
+//    //添加图层蒙板
+//    maskView.layer.mask = shapeLayer;
+
+    
+    UIBezierPath *bpath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(10, 10, SCREEN_WIDTH - 20, SCREEN_HEIGHT - 20) cornerRadius:15];
+    
+    [bpath appendPath:[UIBezierPath bezierPathWithArcCenter:CGPointMake(SCREEN_WIDTH/2, 150) radius:100 startAngle:0 endAngle:2*M_PI clockwise:NO]];
+    
+    // - bezierPathByReversingPath ,反方向绘制path
+    [bpath appendPath:[[UIBezierPath bezierPathWithRoundedRect:CGRectMake(50, 350, SCREEN_WIDTH - 100, 100) cornerRadius:20] bezierPathByReversingPath]];
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = bpath.CGPath;
+    shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    
+    maskView.layer.mask = shapeLayer;
+    
+    
+    
+    
+    NSLog(@"%@ call",NSStringFromSelector(_cmd));
+
+    
+    
+    
+    
+    
     
     class_addMethod([XMView class],
                     @selector(printPerson),
@@ -158,6 +203,10 @@
     //    });
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    
+    [XMModel semaphoreSync];
+    
     //    UIViewController *vc = [[UIViewController alloc] init];
     //    CATransition *transition = [CATransition animation];
     //    transition.duration = 0.25;

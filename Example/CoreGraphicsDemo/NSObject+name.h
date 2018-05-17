@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (name)
+@interface NSObject (name){
+    
+//    NSString *strrrr;
+}
 
 @property NSString *name;
 

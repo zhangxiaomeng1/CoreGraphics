@@ -260,16 +260,6 @@ NSInteger pointIndex;// 点的下标
 //    NSLog(@"哎呀，不要拽人家！");
 //}
 //// 开始触摸时就会调用一次这个方法
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-//    NSLog(@"摸我干啥！");
-//
-//
-////    UIViewController *VC = [[UIViewController alloc] init];
-////    [[self parentController].navigationController pushViewController:VC animated:YES];
-//
-//
-//
-//}
 //
 //// 手指离开屏幕时就会调用一次这个方法
 //- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -281,22 +271,27 @@ NSInteger pointIndex;// 点的下标
 ////    if (view == self) {
 ////        return nil;
 ////    }
-//    
+//
 //    for (int i = 0; i < self.subviews.count; ++i) {
-//        
+//
 ////        NSLog(@"hitTest=%@",self.subviews[i]);
-//        
+//
 //    }
-//    
-//    
+//
+//
 //    return self;
-//    
+//
 //}
 //- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
 //    NSLog(@"鞍山市=%s", __PRETTY_FUNCTION__);
 //    CGRect bounds = CGRectInset(self.bounds, -50, -50);
 //    return CGRectContainsPoint(bounds, point);
 //}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"摸我干啥！");
+    UIViewController *VC = [[UIViewController alloc] init];
+    [[self parentController].navigationController pushViewController:VC animated:YES];
+}
 -(UIViewController*)parentController{
     UIResponder *responder = [self nextResponder];
     while (responder) {

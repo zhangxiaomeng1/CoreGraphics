@@ -1,0 +1,16 @@
+PODS:
+  - CoreGraphicsDemo (0.1.0)
+
+DEPENDENCIES:
+  - CoreGraphicsDemo (from `../`)
+
+EXTERNAL SOURCES:
+  CoreGraphicsDemo:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CoreGraphicsDemo: 6cd9cb31b0f97e74896a1c4e204f575a19a4e13e
+
+PODFILE CHECKSUM: fd4900f81a181888160d01594b341bb9825e6f5f
+
+COCOAPODS: 1.5.0.beta.1

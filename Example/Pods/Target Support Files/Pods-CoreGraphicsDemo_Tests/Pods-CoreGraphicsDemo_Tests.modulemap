@@ -1,0 +1,6 @@
+framework module Pods_CoreGraphicsDemo_Tests {
+  umbrella header "Pods-CoreGraphicsDemo_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module CoreGraphicsDemo {
+  umbrella header "CoreGraphicsDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

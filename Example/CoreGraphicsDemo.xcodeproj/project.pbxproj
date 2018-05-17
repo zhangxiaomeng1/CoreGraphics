@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		142CD4F28A003E0A2187CFA5 /* Pods_CoreGraphicsDemo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D60A7735871E5209844E8B2 /* Pods_CoreGraphicsDemo_Tests.framework */; };
+		4A371C1D20AD123E00CEE8D0 /* XMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A371C1920AD123D00CEE8D0 /* XMModel.m */; };
+		4A371C1E20AD123E00CEE8D0 /* XMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A371C1C20AD123E00CEE8D0 /* XMView.m */; };
+		4A371C2120AD127200CEE8D0 /* NSObject+name.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A371C2020AD127200CEE8D0 /* NSObject+name.m */; };
 		4FF3F3A74672BAC8826E0868 /* Pods_CoreGraphicsDemo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F942E3997306BB9F797CA7 /* Pods_CoreGraphicsDemo_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -38,6 +41,12 @@
 
 /* Begin PBXFileReference section */
 		49F942E3997306BB9F797CA7 /* Pods_CoreGraphicsDemo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreGraphicsDemo_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A371C1920AD123D00CEE8D0 /* XMModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMModel.m; sourceTree = "<group>"; };
+		4A371C1A20AD123D00CEE8D0 /* XMModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMModel.h; sourceTree = "<group>"; };
+		4A371C1B20AD123D00CEE8D0 /* XMView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMView.h; sourceTree = "<group>"; };
+		4A371C1C20AD123E00CEE8D0 /* XMView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMView.m; sourceTree = "<group>"; };
+		4A371C1F20AD127100CEE8D0 /* NSObject+name.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+name.h"; sourceTree = "<group>"; };
+		4A371C2020AD127200CEE8D0 /* NSObject+name.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+name.m"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* CoreGraphicsDemo_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreGraphicsDemo_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,9 +71,9 @@
 		8D60A7735871E5209844E8B2 /* Pods_CoreGraphicsDemo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreGraphicsDemo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E27B5BC84CA6B14D4337B40 /* Pods-CoreGraphicsDemo_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreGraphicsDemo_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreGraphicsDemo_Tests/Pods-CoreGraphicsDemo_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		98E6AA00D527D380407D6815 /* Pods-CoreGraphicsDemo_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreGraphicsDemo_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreGraphicsDemo_Example/Pods-CoreGraphicsDemo_Example.release.xcconfig"; sourceTree = "<group>"; };
-		A5D07F4205C6163D650CF21C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B6EF30AED4F0873F49200858 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		D5B9925C25E900077EC7BE3D /* CoreGraphicsDemo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CoreGraphicsDemo.podspec; path = ../CoreGraphicsDemo.podspec; sourceTree = "<group>"; };
+		A5D07F4205C6163D650CF21C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B6EF30AED4F0873F49200858 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D5B9925C25E900077EC7BE3D /* CoreGraphicsDemo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CoreGraphicsDemo.podspec; path = ../CoreGraphicsDemo.podspec; sourceTree = "<group>"; };
 		E6377F49994872800E977B21 /* Pods-CoreGraphicsDemo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreGraphicsDemo_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreGraphicsDemo_Tests/Pods-CoreGraphicsDemo_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F52553737B608B8109C9936E /* Pods-CoreGraphicsDemo_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreGraphicsDemo_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreGraphicsDemo_Example/Pods-CoreGraphicsDemo_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +146,12 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* XMViewController.h */,
 				6003F5A6195388D20070C39A /* XMViewController.m */,
+				4A371C1A20AD123D00CEE8D0 /* XMModel.h */,
+				4A371C1920AD123D00CEE8D0 /* XMModel.m */,
+				4A371C1F20AD127100CEE8D0 /* NSObject+name.h */,
+				4A371C2020AD127200CEE8D0 /* NSObject+name.m */,
+				4A371C1B20AD123D00CEE8D0 /* XMView.h */,
+				4A371C1C20AD123E00CEE8D0 /* XMView.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -357,7 +372,10 @@
 			files = (
 				6003F59E195388D20070C39A /* XMAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* XMViewController.m in Sources */,
+				4A371C1D20AD123E00CEE8D0 /* XMModel.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				4A371C2120AD127200CEE8D0 /* NSObject+name.m in Sources */,
+				4A371C1E20AD123E00CEE8D0 /* XMView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

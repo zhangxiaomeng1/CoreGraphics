@@ -17,9 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'iOS系统本身提供了两套绘图的框架，即 UIBezierPath 和** Core Graphics**。而前者所属UIKit，其实是对Core Graphics框架关于path的进一步封装，所以使用起来比较简单。但是毕竟Core Graphics更接近底层，所以它更加强大。'
 
   s.homepage         = 'https://github.com/zhangxieomeng1/CoreGraphicsDemo'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'

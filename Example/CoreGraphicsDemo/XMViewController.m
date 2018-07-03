@@ -105,10 +105,7 @@
     NSLog(@"%@ call",NSStringFromSelector(_cmd));
 
     
-    
-    
-    
-    
+
     
     class_addMethod([XMView class],
                     @selector(printPerson),
